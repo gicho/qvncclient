@@ -22,7 +22,7 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     dialog_setting.ui
 
-DEFINES += LIBSSH_STATIC
+DEFINES += LIBSSH_STATIC QT_NO_OPENGL
 LIBS += -L$$PWD/lib -lssh -ldl -lz -lcrypto -lgcrypt -lgpg-error
 
 win32{

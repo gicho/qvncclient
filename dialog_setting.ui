@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>远程IP:</string>
+      <string>IP:</string>
      </property>
     </widget>
    </item>
@@ -34,7 +34,7 @@
    <item row="1" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>ssh端口:</string>
+      <string>SSH port:</string>
      </property>
     </widget>
    </item>
@@ -48,7 +48,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>登录用户:</string>
+      <string>User:</string>
      </property>
     </widget>
    </item>
@@ -58,7 +58,7 @@
    <item row="3" column="0">
     <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>用户密码:</string>
+      <string>Password:</string>
      </property>
     </widget>
    </item>
@@ -75,7 +75,7 @@
    <item row="4" column="0">
     <widget class="QLabel" name="label_7">
      <property name="text">
-      <string>上传目录:</string>
+      <string>Upload folder:</string>
      </property>
     </widget>
    </item>
