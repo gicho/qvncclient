@@ -78,10 +78,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->editCmd->setCompleter(cmdcompleter);
     ui->editCmd->installEventFilter(this);
     ui->console->installEventFilter(ssh);
-    connect(ui->cbxCmd,QOverload<int>::of(&QComboBox::highlighted),[=](int index){
+    connect(ui->cbxCmd,static_cast<void (QComboBox::*)(int)>(&QComboBox::highlighted),[=](int index){
         ui->statusBar->showMessage(ui->cbxCmd->itemData(index).toString(), 1000);
     });
-    connect(ui->cbxCmd,QOverload<int>::of(&QComboBox::currentIndexChanged),[=](int index){
+    connect(ui->cbxCmd,static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),[=](int index){
         ui->editCmd->setText(ui->cbxCmd->itemData(index).toString());
     });
 

@@ -22,14 +22,15 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     dialog_setting.ui
 
-#LIBS += -lssh
+DEFINES += LIBSSH_STATIC
+LIBS += -L$$PWD/lib -lssh -ldl -lz -lcrypto -lgcrypt -lgpg-error
+
 win32{
         # static lib request this
         DEFINES += LIBSSH_STATIC
         LIBS += -L$$PWD/lib -lssh -lgcrypt -lgpg-error
         LIBS += -lws2_32 -lz
 }
-else:LIBS += -lssh
 
 
 

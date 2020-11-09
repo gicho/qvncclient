@@ -583,11 +583,14 @@ bool QAnnConsole::parseControlEscapeSequence(QTextCursor &cursor, const char act
         break;
     }
     case 'J':{ // clears Display
-        if(attribute == '2'){
+        int attr = attribute.toInt(&ok);
+        if(!ok) attr = 0;
+
+        if(attr == 2){
             cursor.select(QTextCursor::Document);
             cursor.removeSelectedText();
         }
-        else if(attribute == '1'){
+        else if(attr == 1){
             cursor.movePosition(QTextCursor::Start, QTextCursor::KeepAnchor);
             cursor.removeSelectedText();
         }
@@ -599,11 +602,13 @@ bool QAnnConsole::parseControlEscapeSequence(QTextCursor &cursor, const char act
         break;
     }
     case 'K':{ // clears all characters form the cursor to the end of the line
-        if(attribute == '2'){
+        int attr = attribute.toInt(&ok);
+        if(!ok) attr = 0;
+        if(attr == 2){
             cursor.select(QTextCursor::LineUnderCursor);
             cursor.removeSelectedText();
         }
-        else if(attribute == '1'){
+        else if(attr == 1){
             cursor.movePosition(QTextCursor::StartOfLine, QTextCursor::KeepAnchor);
             cursor.removeSelectedText();
         }
